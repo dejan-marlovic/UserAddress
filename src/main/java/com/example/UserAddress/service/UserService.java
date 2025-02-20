@@ -28,7 +28,6 @@ public class UserService {
         List <UserAddressDTO> userAddressDTOs = new ArrayList<>();
 
         for(User user : users){
-            System.out.println(user.getName());
             UserAddressDTO userAddressDTO = UserAddressMapper.INSTANCE.userAddressDTO(user);
             userAddressDTOs.add(userAddressDTO);
         }
