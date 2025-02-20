@@ -1,24 +1,18 @@
 package com.example.UserAddress.dto;
 
 
-import com.example.UserAddress.model.User;
-
 public class UserAddressDTO {
-    private  Long userId;
-    private  String userName;
-    private  String userEmail;
-    private  String street;
-    private  String city;
+    private Long userId;
+    private String userName;
+    private String userEmail;
+    private String street;
+    private String city;
 
-    public UserAddressDTO(User user) {
-        this.userId = user.getId();
-        this.userName = user.getName();
-        this.userEmail = user.getEmail();
-        this.street = user.getAddress().getStreet();
-        this.city = user.getAddress().getCity();
-    }
 
-    public UserAddressDTO() {}
+
+    public UserAddressDTO() {}  // ✅ Keep only the no-arg constructor
+
+    // Getters...
 
     public Long getUserId() {
         return userId;
@@ -38,5 +32,25 @@ public class UserAddressDTO {
 
     public String getCity() {
         return city;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }
