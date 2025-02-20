@@ -1,13 +1,10 @@
 package com.example.UserAddress.service;
 import com.example.UserAddress.dto.UserAddressDTO;
 import com.example.UserAddress.dto.UserAddressMapper;
-import com.example.UserAddress.dto.UserAddressMapperOld;
 import com.example.UserAddress.model.User;
 import com.example.UserAddress.repository.UserRepository;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +25,7 @@ public class UserService {
         List <UserAddressDTO> userAddressDTOs = new ArrayList<>();
 
         for(User user : users){
-            UserAddressDTO userAddressDTO = UserAddressMapper.INSTANCE.userAddressDTO(user);
+            UserAddressDTO userAddressDTO = UserAddressMapper.INSTANCE.userToUserAddressDTO(user);
             userAddressDTOs.add(userAddressDTO);
         }
         return userAddressDTOs;

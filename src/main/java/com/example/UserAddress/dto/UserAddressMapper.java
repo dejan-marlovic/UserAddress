@@ -14,6 +14,6 @@ public interface UserAddressMapper {
     @Mapping(source = "email", target = "userEmail")
     @Mapping(source = "address.street", target = "street")
     @Mapping(source = "address.city", target = "city")
-    UserAddressDTO userAddressDTO(User user);
+    UserAddressDTO userToUserAddressDTO(User user);
     User userAddressDTOToUser(UserAddressDTO userAddressDTO);
 }
